@@ -16,10 +16,14 @@ const fetchData = () => {
         }
 
         // Check if the iteration is over
-        // Run amimation if so
+        // Wait for tap then run animation
         if ( dataArr.length === dataArr.indexOf(customData) + 1 ) {
-          animationTimeline();
-        } 
+          const overlay = document.getElementById('tap-overlay');
+          overlay.addEventListener('click', () => {
+            overlay.style.display = 'none';
+            animationTimeline();
+          }, { once: true });
+        }
       });
     });
 };
