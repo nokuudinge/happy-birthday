@@ -26,6 +26,9 @@ const fetchData = () => {
 
 // Animation Timeline
 const animationTimeline = () => {
+  const music = document.getElementById('bg-music');
+  music.currentTime = 0;
+  music.play().catch(() => {});
   // Spit chars that needs to be animated individually
   const textBoxChars = document.getElementsByClassName("hbd-chatbox")[0];
   const hbd = document.getElementsByClassName("wish-hbd")[0];
@@ -58,6 +61,16 @@ const animationTimeline = () => {
     .to(".container", 0.1, {
       visibility: "visible"
     })
+    .staggerTo(
+      ".eight svg",
+      0.8,
+      {
+        visibility: "visible",
+        opacity: 0,
+        scale: 80
+      },
+      0.1
+    )
     .from(".one", 0.7, {
       opacity: 0,
       y: 10
@@ -87,8 +100,12 @@ const animationTimeline = () => {
     .from(".three", 0.7, {
       opacity: 0,
       y: 10
-      // scale: 0.7
     })
+    .from(".nyasha-flowers", 0.6, {
+      scale: 0.4,
+      opacity: 0,
+      rotationZ: -8
+    }, "-=0.3")
     .to(
       ".three",
       0.7,
@@ -96,8 +113,14 @@ const animationTimeline = () => {
         opacity: 0,
         y: 10
       },
-      "+=2"
+      "+=3.5"
     )
+    .from(".photo-1", 0.6, { scale: 0.6, opacity: 0 })
+    .to(".photo-1", 0.5, { opacity: 0 }, "+=2.5")
+    .from(".photo-2", 0.6, { scale: 0.6, opacity: 0 })
+    .to(".photo-2", 0.5, { opacity: 0 }, "+=2.5")
+    .from(".photo-3", 0.6, { scale: 0.6, opacity: 0 })
+    .to(".photo-3", 0.5, { opacity: 0 }, "+=2.5")
     .from(".four", 0.7, {
       scale: 0.2,
       opacity: 0
@@ -115,7 +138,7 @@ const animationTimeline = () => {
       0.05
     )
     .to(".fake-btn", 0.1, {
-      backgroundColor: "rgb(127, 206, 248)"
+      backgroundColor: "#FFE066"
     })
     .to(
       ".four",
@@ -130,15 +153,15 @@ const animationTimeline = () => {
     .from(".idea-1", 0.7, ideaTextTrans)
     .to(".idea-1", 0.7, ideaTextTransLeave, "+=1.5")
     .from(".idea-2", 0.7, ideaTextTrans)
-    .to(".idea-2", 0.7, ideaTextTransLeave, "+=1.5")
+    .to(".idea-2", 0.7, ideaTextTransLeave, "+=2.5")
     .from(".idea-3", 0.7, ideaTextTrans)
     .to(".idea-3 strong", 0.5, {
       scale: 1.2,
       x: 10,
-      backgroundColor: "rgb(21, 161, 237)",
-      color: "#fff"
+      backgroundColor: "#FFE066",
+      color: "#333"
     })
-    .to(".idea-3", 0.7, ideaTextTransLeave, "+=1.5")
+    .to(".idea-3", 0.7, ideaTextTransLeave, "+=6")
     .from(".idea-4", 0.7, ideaTextTrans)
     .to(".idea-4", 0.7, ideaTextTransLeave, "+=1.5")
     .from(
@@ -170,7 +193,7 @@ const animationTimeline = () => {
         scale: 0.2,
         opacity: 0
       },
-      "+=2"
+      "+=7"
     )
     .staggerFrom(
       ".idea-6 span",
@@ -220,12 +243,6 @@ const animationTimeline = () => {
       },
       "-=2"
     )
-    .from(".hat", 0.5, {
-      x: -100,
-      y: 350,
-      rotation: -180,
-      opacity: 0
-    })
     .staggerFrom(
       ".wish-hbd span",
       0.7,
@@ -249,7 +266,7 @@ const animationTimeline = () => {
       {
         scale: 1,
         rotationY: 0,
-        color: "#ff69b4",
+        color: "#FFE066",
         ease: Expo.easeOut
       },
       0.1,
@@ -265,23 +282,11 @@ const animationTimeline = () => {
       },
       "party"
     )
-    .staggerTo(
-      ".eight svg",
-      1.5,
-      {
-        visibility: "visible",
-        opacity: 0,
-        scale: 80,
-        repeat: 3,
-        repeatDelay: 1.4
-      },
-      0.3
-    )
     .to(".six", 0.5, {
       opacity: 0,
       y: 30,
       zIndex: "-1"
-    })
+    }, "+=22")
     .staggerFrom(".nine p", 1, ideaTextTrans, 1.2)
     .to(
       ".last-smile",
@@ -299,6 +304,8 @@ const animationTimeline = () => {
   const replyBtn = document.getElementById("replay");
   replyBtn.addEventListener("click", () => {
     tl.restart();
+    music.currentTime = 0;
+    music.play().catch(() => {});
   });
 };
 

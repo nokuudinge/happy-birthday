@@ -79,17 +79,19 @@ body {
   position: absolute;
   right: 5px;
   bottom: 5px;
-  color: #fff;
-  background-color: rgb(21, 161, 237);
+  color: #333;
+  background-color: #FFE066;
   padding: 5px 8px;
   border-radius: 3px;
 }
 
 .five p {
-  font-size: 2rem;
+  font-size: 1.3rem;
   position: absolute;
   left: 0;
   right: 0;
+  padding: 0 6%;
+  box-sizing: border-box;
 }
 
 .idea-3 strong {
@@ -99,7 +101,7 @@ body {
 }
 
 .five .idea-5 {
-  font-size: 4rem;
+  font-size: 1.3rem;
 }
 
 .idea-5 span,
@@ -122,12 +124,50 @@ body {
   height: auto;
 }
 
+.three .nyasha-flowers {
+  display: block;
+  width: 230px;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 auto 10px;
+}
+
+.extra-photo {
+  display: block;
+  width: 260px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+.photo-caption {
+  font-size: 1.3rem;
+  font-weight: lighter;
+  margin: 12px 0 0;
+  padding: 0 6%;
+}
+
+.main-photo-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.six .lydia-dp {
+  width: 260px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+
 .six .hat {
   position: absolute;
   width: 80px;
   top: -35px;
-  left: 41.5%;
-  /* transform: scale(0.1); */
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .baloons img {
@@ -159,55 +199,55 @@ body {
 .eight svg:nth-child(1) {
   top: 7vh;
   left: 5vw;
-  fill: #bd6ecf;
+  fill: #FFE066;
 }
 
 .eight svg:nth-child(2) {
   top: 23vh;
   left: 35vw;
-  fill: #7dd175;
+  fill: #FFD54F;
 }
 
 .eight svg:nth-child(3) {
   top: 33vh;
   left: 23vw;
-  fill: #349d8b;
+  fill: #FFF176;
 }
 
 .eight svg:nth-child(4) {
   top: 43vh;
   left: 57vw;
-  fill: #347a9d;
+  fill: #FFCC02;
 }
 
 .eight svg:nth-child(5) {
   top: 68vh;
   left: 7vw;
-  fill: #c66053;
+  fill: #F9A825;
 }
 
 .eight svg:nth-child(6) {
   top: 42vh;
   left: 77vw;
-  fill: #bfaa40;
+  fill: #FDD835;
 }
 
 .eight svg:nth-child(7) {
   top: 68vh;
   left: 83vw;
-  fill: #e3bae8;
+  fill: #FFEE58;
 }
 
 .eight svg:nth-child(8) {
   top: 86vh;
   left: 37vw;
-  fill: #8762cb;
+  fill: #FFB300;
 }
 
 .eight svg:nth-child(9) {
   top: 94vh;
   left: 87vw;
-  fill: #9a90da;
+  fill: #FFE066;
 }
 
 .wish-hbd {
@@ -218,8 +258,10 @@ body {
 
 .wish h5 {
   font-weight: lighter;
-  font-size: 2rem;
+  font-size: 0.95rem;
   margin: 10px 0 0;
+  line-height: 1.6;
+  padding: 0 5%;
 }
 
 .nine p {
@@ -233,30 +275,6 @@ body {
 }
 
 /* Media Queries */
-@media screen and (max-height: 1000px) {
-  .six .hat {
-    left: 40%;
-  }
-}
-
-@media screen and (max-height: 800px) {
-  .six .hat {
-    left: 37%;
-  }
-}
-
-@media screen and (max-height: 700px) {
-  .six .hat {
-    left: 32%;
-  }
-}
-
-@media screen and (max-height: 850px) and (max-width: 450px) {
-  .six .hat {
-    left: 32%;
-  }
-}
-
 @media screen and (max-width: 500px) {
   .container {
     width: 90%;
@@ -277,6 +295,11 @@ body {
 
   .idea-6 span {
     font-size: 10rem;
+  }
+
+  .six .lydia-dp {
+    width: 130px;
+    height: 130px;
   }
 
   .six .hat {
